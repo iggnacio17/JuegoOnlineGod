@@ -4,7 +4,7 @@ using Photon.Realtime;
 
 public class PlayerRole : MonoBehaviourPunCallbacks
 {
-    public int role = 0; //0: sin rol, 1: persona, 2: asesino
+    public int role = 0;
 
     private int maxPlayers => PhotonNetwork.CurrentRoom.MaxPlayers;
 
@@ -58,6 +58,7 @@ public class PlayerRole : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
+    [System.Obsolete]
     public void RequestMyRole(int actorNumber)
     {
         if (!PhotonNetwork.IsMasterClient) return;
